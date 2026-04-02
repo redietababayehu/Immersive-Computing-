@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rediet's Solar System</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <img id="mySun" src="assets/sun.jpg" />
+        <img id="myMercury" src="assets/mercury.jpg" />
+        <img id="myVenus" src="assets/venus.jpg" />
+        <img id="myEarth" src="assets/earth.jpg" />
+        <img id="myMars" src="assets/mars.jpg" />
+        <img id="mySpace" src="assets/nebula.jpg" />
+      </a-assets>
+
+      <a-entity id="rig" position="0 8 25">
+        <a-camera look-controls wasd-controls="acceleration: 100"></a-camera>
+      </a-entity>
+
+      <a-light type="ambient" color="#ffffff" intensity="0.7"></a-light>
+      <a-light
+        type="point"
+        position="0 0 0"
+        intensity="1.5"
+        distance="50"
+      ></a-light>
+
+      <a-sphere
+        id="sun"
+        position="0 0 0"
+        radius="4"
+        src="#mySun"
+        material="emissive: #ffffff; emissiveIntensity: 0.2"
+        animation__rotate="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear"
+        animation__color="property: material.color; from: #FFCC00; to: #FF6600; dur: 3000; dir: alternate; loop: true; easing: easeInOutSine"
+      >
+      </a-sphere>
+
+      <a-entity
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+      >
+        <a-sphere
+          position="7 0 0"
+          radius="0.5"
+          src="#myMercury"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 2000; easing: linear"
+        >
+        </a-sphere>
+      </a-entity>
+
+      <a-entity
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 9000; easing: linear"
+      >
+        <a-sphere
+          position="10 0 0"
+          radius="0.8"
+          src="#myVenus"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 3000; easing: linear"
+        >
+        </a-sphere>
+      </a-entity>
+
+      <a-entity
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 13000; easing: linear"
+      >
+        <a-sphere
+          position="14 0 0"
+          radius="1"
+          src="#myEarth"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 4000; easing: linear"
+        >
+        </a-sphere>
+      </a-entity>
+
+      <a-entity
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 18000; easing: linear"
+      >
+        <a-sphere
+          position="18 0 0"
+          radius="0.7"
+          src="#myMars"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear"
+        >
+        </a-sphere>
+      </a-entity>
+
+      <a-sky src="#mySpace"></a-sky>
+    </a-scene>
+  </body>
+</html>
